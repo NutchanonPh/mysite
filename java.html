@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<script>
+  document.getElementById("demo").innerHTML = "Hello World";
+</script>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Nutchanon</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="index.html" class="w3-bar-item w3-button">index</a>
+      <a href="java.html" class="w3-bar-item w3-button">java</a>
+      <a href="api.html" class="w3-bar-item w3-button">api</a>
+    </div>
+  </div>
+</div>
+
+<!-- Page content -->
+<div class="w3-content w3-padding-64 w3-margin-top" style="max-width:1564px">
+<h1>The Document Object</h1>
+<hr>
+<h2 id="demo">Click to change</h2>
+<button onclick="myFunction()">Click</button>
+<hr>
+<h2 id="demo2">Say Hello</h2>
+<button onclick="sayHello()">Click</button>
+<hr>
+<h2 id="demo3">Login Feature</h2>
+<p>username : admin</p>
+<p>password : P@ssw0rd</p>
+<button onclick="login()">Click</button>
+<hr>
+<h2 id="demo4">Sum Number</h2>
+<button onclick="sum()">Click</button>
+<hr>
+<h2 id="demo5">Number</h2>
+<p>You can type number 0 , 1 , -1</p>
+<button onclick="number()">Click</button>
+<hr>
+<h2 id="demo6">Days To Second</h2>
+<button onclick="DaysToSecond()">Click</button>
+
+<!-- End page content -->
+</div>
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+<script>
+  function myFunction() {
+    document.getElementById("demo").innerHTML = "Hello World";
+        }
+  function sayHello() {
+    document.getElementById("demo2").innerHTML = "Say Hello" ;
+            let user = prompt("Enter Your Name");
+            alert('Hello' + user);
+        }
+  function login() {
+    document.getElementById("demo3").innerHTML = "Login Feature" ;
+            let username = prompt("กรุณาใส่ username");
+            if ( username == 'admin') {
+                let password = prompt("กรุณาใส่รหัสผ่าน");
+                if ( password == 'P@ssw0rd') {
+                    alert('login สำเร็จ');
+                } else {
+                    alert('login ไม่สำเร็จ');
+                }
+            } else {
+                alert('กรุณาใส่ชื่อ , รหัสผ่านที่ถูกต้อง');
+            }
+        }
+  function sum() {
+    document.getElementById("demo4").innerHTML = "Sum Number";
+          const num1 = parseInt(prompt('Enter Your First Number'));
+              const num2 = parseInt(prompt('Enter Your Second Number'));
+              const sum = num1 + num2;
+              alert(`Sum is: ${sum}`);
+        }
+  function number() {
+    document.getElementById("demo5").innerHTML = "Number";
+          let number = parseFloat(prompt('Enter Your Number'));
+          number = parseFloat(number);
+          switch(number) {
+            case 0:
+              alert('Zero');
+              break;
+            case 1:
+              alert('One');
+              break;
+            case -1:
+              alert('Minus');
+              break;
+            default:
+              alert('Invalid Number');
+              break;
+          }
+  }
+  function DaysToSecond() {
+    document.getElementById("demo6").innerHTML = "Days To Second";
+    const daysToSeconds = (days) => {
+      const secondsInMinute = 60;
+      const minutesInHour = 60;
+      const hoursInDay =24;
+      const seconds = days * hoursInDay * minutesInHour * secondsInMinute;
+      return seconds;
+    }
+    let days = prompt('ใส่จำนวนวัน')
+      const result = daysToSeconds(days);
+      alert(`${days} วัน = ${result} วินาที`);
+  }
+</script>
+</body>
+</html>
